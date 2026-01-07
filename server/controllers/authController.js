@@ -47,8 +47,8 @@ export const register = async (req, res) => {
             res.status(400).json({ message: 'Invalid user data' });
         }
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: 'Server error' });
+        console.error('Server Error:', error.message);
+        res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
 
@@ -79,8 +79,8 @@ export const login = async (req, res) => {
             res.status(400).json({ message: 'Invalid credentials' });
         }
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ message: 'Server error' });
+        console.error('Server Error:', error.message);
+        res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
 
